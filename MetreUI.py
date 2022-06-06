@@ -376,7 +376,12 @@ class MainView(ui.View):
             global wait_for_et
         def etoh_alert(self):
             print(os.path.exists(self.cwd + '/' + 'etoh_console.pyui'))
-            self.etoh_console = ui.load_view('etoh_console')
+            try:
+                self.etoh_console = ui.load_view('etoh_console')
+            except:
+                os.chdir(self.cwd + '/MetreiOS/MetreAppUI_' + APP_VERSION)
+                self.etoh_console = ui.load_view('etoh_console')
+             
             self.vx.add_subview(self.etoh_console)
             self.etoh_console.center = self.vx.bounds.center()
             self.etoh_console.flex= 'WH'
