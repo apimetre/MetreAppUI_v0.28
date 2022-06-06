@@ -380,6 +380,8 @@ class MainView(ui.View):
                 self.etoh_console = ui.load_view('etoh_console')
             except:
                 os.chdir(self.cwd + '/MetreiOS/MetreAppUI_' + APP_VERSION)
+                print(os.getcwd())
+                print(os.path.exists(os.getcwd() + '/' + 'etoh_console.pyui'))
                 self.etoh_console = ui.load_view('etoh_console')
              
             self.vx.add_subview(self.etoh_console)
