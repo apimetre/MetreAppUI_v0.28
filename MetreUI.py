@@ -375,7 +375,7 @@ class MainView(ui.View):
             self.dt = dt_
             global wait_for_et
         def etoh_alert(self):
-            print(os.path.exists(self.cwd) + '/' + 'etoh_console.pyui')
+            print(self.cwd + '/' + 'etoh_console.pyui')
             self.etoh_console = ui.load_view('etoh_console')
             self.vx.add_subview(self.etoh_console)
             self.etoh_console.center = self.vx.bounds.center()
